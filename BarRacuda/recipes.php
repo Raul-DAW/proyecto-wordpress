@@ -1,6 +1,8 @@
 <?php
-
-    /**
-     * Template Name: RECIPES
-     * 
-     */
+/**
+ *
+ * Template Name: RECIPES
+ *
+ */
+?>
+RECIPES

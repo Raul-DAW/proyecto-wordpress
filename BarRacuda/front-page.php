@@ -512,92 +512,129 @@
 			</section>
 			<!-- Chef End-->
 
-			<!-- News-->
-			<section class="module" id="news">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 m-auto text-center">
-							<p class="subtitle">From the blog</p>
-							<h1 class="display-1">Our Last Posts</h1>
-							<p class="lead">See how your users experience your website in realtime or view <br/> trends to see any changes in performance over time.</p>
-							<div class="divider-border"></div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="space" data-mY="60px"></div>
-						</div>
-					</div>
-					<div class="row appear-childer blog-grid">
+	      <!-- News-->
+<section class="module" id="news">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 m-auto text-center">
+				<p class="subtitle">From the blog</p>
+				<h1 class="display-1">Our Last Posts</h1>
+				<p class="lead">See how your users experience your website in realtime or view <br/> trends to see any changes in performance over time.</p>
+				<div class="divider-border"></div>
+			</div>
+		</div>
 
-                        <!--Empieza bucle-->
-                        <?php
-                            $args = array(
-                                'post_per_page' => 3,
-                            );
-                            $last_posts = new WP_Query($args);
-                            if($last_posts->have_posts()):
-                                while($last_posts->have_posts()):
-                                    $last_posts->the_post();
+		<div class="row">
+			<div class="col-md-12">
+				<div class="space" data-mY="60px"></div>
+			</div>
+		</div>
 
-                            
-                        ?>
 
-                                    <div class="col-md-4 post-item">
+		<div class="row appear-childer blog-grid">
 
-                                        <!-- Post-->
-                                        <article class="post">
-                                            <div class="post-preview"><a href="#"><img src="<?php echo bloginfo('template_directory'); ?>/assets/images/menu/4.jpg" alt=""></a></div>
-                                            <div class="post-wrapper">
-                                                <div class="post-header">
-                                                    <h2 class="post-title display-1"><a href="blog-single-1.html">Which Lamb is the Best: American, Australian or New Zealand?</a></h2>
-                                                </div>
-                                                <div class="post-content">
-                                                    <p>See how your users experience your website in realtime or view trends to see any changes in performance over time...</p>
-                                                </div>
-                                                <div class="post-more"><a href="#">read more...</a></div>
-                                            </div>
-                                        </article>
-                                        <!-- Post end-->
-                                    </div>
+			<!--Empieza bucle-->
+			<?php
+				$args = array(
+					'posts_per_page' => 3,
+				);
 
-                        <!--Termina bucle-->
-                        <?php
-                                endwhile;
-                            else:
-                                echo "No posts published yet...";
-                            endif;
-                        ?>
+				$last_posts = new WP_Query($args);
+
+				if($last_posts->have_posts()):
+
+					while($last_posts->have_posts()):
+
+						$last_posts->the_post();
+			?>
 
 						<div class="col-md-4 post-item">
 
-						
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="space" data-mY="60px"></div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="text-center"><a class="btn btn-circle btn-gray" href="#">All Recipes</a></div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="space" data-mY="100px"></div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- News end-->
+							<!-- Post-->
+							<article class="post">
+                                      <!-- Paara ver bien las fotos de cada post -->
+								<div class="post-preview">
+	                            <a href="<?php the_permalink(); ?>">
+		                        <?php the_post_thumbnail(); ?>
+	                                 </a>
+                                    </div>
 
-			<svg class="footer-circle" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
-				<path d="M0 100 C40 0 60 0 100 100 Z"></path>
-			</svg>
+								<div class="post-wrapper">
+
+									<div class="post-header">
+										<h2 class="post-title display-1">
+											<a href="<?php the_permalink(); ?>">
+												<?php the_title(); ?>
+											</a>
+										</h2>
+									</div>
+
+									<div class="post-content">
+										<?php the_excerpt(); ?>
+									</div>
+
+									<div class="post-more">
+										<a href="<?php the_permalink(); ?>">read more...</a>
+									</div>
+
+								</div>
+
+							</article>
+							<!-- Post end-->
+
+						</div>
+
+			<!--Termina bucle-->
+			<?php
+					endwhile;
+				else:
+					echo "No posts published yet...";
+				endif;
+			?>
+
+		</div>
+
+
+		<!-- LO QUE HABÍA ANTES Y SE HA QUITADO:
+
+		<div class="col-md-4 post-item">
+
+		-->
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="space" data-mY="60px"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-center">
+					<a class="btn btn-circle btn-gray" href="#">All Recipes</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="space" data-mY="100px"></div>
+			</div>
+		</div>
+
+	</div>
+</section>
+<!-- News end-->
+
+
+<svg class="footer-circle" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
+	<path d="M0 100 C40 0 60 0 100 100 Z"></path>
+</svg>
+
+
 <?php
-    // Aquí tenemos que anexar footer.php
-    get_footer();
+	// Aquí tenemos que anexar footer.php
+	get_footer();
 ?>
 
 		

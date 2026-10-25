@@ -1,6 +1,8 @@
 <?php
-
-    /**
-     * Template Name: ARCHIVES
-     * 
-     */
+/**
+ *
+ * Template Name: ARCHIEVES
+ *
+ */
+?>
+ARCHIEVES

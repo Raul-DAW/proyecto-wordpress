@@ -1,6 +1,9 @@
 <?php
+/**
+ *
+ * Template Name: CONTACT
+ *
+ */
+?>
 
-    /**
-     * Template Name: CONTACT
-     * 
-     */
+CONTACT

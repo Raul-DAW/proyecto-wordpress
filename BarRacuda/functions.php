@@ -1,5 +1,5 @@
 <?php
-    
+    add_theme_support('post-thumbnails'); /*Para que en las entradas me deje poner las imagenes destacadas y no una predeterminada*/
     function my_theme_scripts() {
         // Anexar la hoja de estilos principal
         wp_enqueue_style( 'style', get_stylesheet_uri() );
